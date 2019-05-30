@@ -9,18 +9,29 @@ public class Participante implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idparticipante")
+    @Column(name = "par_id")
     private Integer idParticipante;
-
+    
+    @Column(name = "par_nombre")
     private String nombre;
+    
+    @Column(name = "par_apellido")
+    private String apellido;
 
+    @Column(name = "par_usuario")
     private String usuario;
 
+    @Column(name = "par_email")
     private String email;
 
+    @Column(name = "par_foto")
     private String foto;
 
-    private Integer ciclo;
+    @Column(name = "par_celular")
+    private String celular;
+    
+    @Column(name = "par_ciclo")
+    private Integer ciclo;    
 
     public Integer getIdParticipante() {
         return idParticipante;
@@ -36,6 +47,14 @@ public class Participante implements Serializable {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+    
+    public String getApellido() {
+        return nombre;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
 
     public String getUsuario() {
@@ -62,6 +81,14 @@ public class Participante implements Serializable {
         this.foto = foto;
     }
 
+    public String getCelular() {
+        return celular;
+    }
+
+    public void setCelular(String celular) {
+        this.celular = celular;
+    }
+    
     public Integer getCiclo() {
         return ciclo;
     }
@@ -70,15 +97,18 @@ public class Participante implements Serializable {
         this.ciclo = ciclo;
     }
 
-    @Override
-    public String toString() {
-        return "Participante{" +
-                "idParticipante=" + idParticipante +
-                ", nombre='" + nombre + '\'' +
-                ", usuario='" + usuario + '\'' +
-                ", email='" + email + '\'' +
-                ", foto='" + foto + '\'' +
-                ", ciclo=" + ciclo +
-                '}';
-    }
+	@Override
+	public String toString() {
+		return "Participante ["
+				+ "idParticipante=" + idParticipante +
+				", nombre=" + nombre + 
+				", apellido=" + apellido +
+				", usuario=" + usuario +
+				", email=" + email + 
+				", foto=" + foto +
+				", celular=" + celular +
+				", ciclo=" + ciclo + "]";
+	}
+
+    
 }

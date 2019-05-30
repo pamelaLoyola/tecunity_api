@@ -40,8 +40,6 @@ public class TutoriaController {
         Tutoria currentTutoria = this.iTutoriaService.findById(id);
         currentTutoria.setTitulo(tutoria.getTitulo());
         currentTutoria.setDescripcion(tutoria.getDescripcion());
-        currentTutoria.setHorarioInicio(tutoria.getHorarioInicio());
-        currentTutoria.setHorarioFin(tutoria.getHorarioFin());
         currentTutoria.setTipo(tutoria.getTipo());
         currentTutoria.setEtiquetas(tutoria.getEtiquetas());
         currentTutoria.setEstado(tutoria.getEstado());
