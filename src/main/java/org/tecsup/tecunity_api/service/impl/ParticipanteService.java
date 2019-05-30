@@ -1,6 +1,7 @@
 package org.tecsup.tecunity_api.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.tecsup.tecunity_api.model.Participante;
@@ -13,6 +14,7 @@ import java.util.List;
 public class ParticipanteService implements IParticipanteService {
 
     @Autowired
+    @Qualifier(value = "participanteRepository")
     private ParticipanteRepository participanteRepository;
 
     @Override

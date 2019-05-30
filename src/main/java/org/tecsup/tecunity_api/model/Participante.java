@@ -1,7 +1,11 @@
 package org.tecsup.tecunity_api.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "participante")
@@ -11,10 +15,10 @@ public class Participante implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "par_id")
     private Integer idParticipante;
-    
+
     @Column(name = "par_nombre")
     private String nombre;
-    
+
     @Column(name = "par_apellido")
     private String apellido;
 
@@ -29,9 +33,40 @@ public class Participante implements Serializable {
 
     @Column(name = "par_celular")
     private String celular;
-    
+
     @Column(name = "par_ciclo")
-    private Integer ciclo;    
+    private String ciclo;
+
+    @ManyToOne
+    @JoinColumn(name = "carrera_carrera_id")
+    private Carrera carrera;
+
+    /*
+    @ManyToMany(mappedBy = "authors")
+    private List&lt;Book> books;
+
+
+
+    @ManyToMany(mappedBy = "participantes")
+    @JsonIgnore
+    private Set<Asesoria> asesorias;
+
+     */
+
+    public Participante(String nombre, String apellido, String usuario, String email, String foto, String celular,
+                        String ciclo, Carrera carrera) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.usuario = usuario;
+        this.email = email;
+        this.foto = foto;
+        this.celular = celular;
+        this.ciclo = ciclo;
+        this.carrera = carrera;
+    }
+
+    public Participante() {
+    }
 
     public Integer getIdParticipante() {
         return idParticipante;
@@ -48,9 +83,9 @@ public class Participante implements Serializable {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    
+
     public String getApellido() {
-        return nombre;
+        return apellido;
     }
 
     public void setApellido(String apellido) {
@@ -88,27 +123,35 @@ public class Participante implements Serializable {
     public void setCelular(String celular) {
         this.celular = celular;
     }
-    
-    public Integer getCiclo() {
+
+    public String getCiclo() {
         return ciclo;
     }
 
-    public void setCiclo(Integer ciclo) {
+    public void setCiclo(String ciclo) {
         this.ciclo = ciclo;
     }
 
-	@Override
-	public String toString() {
-		return "Participante ["
-				+ "idParticipante=" + idParticipante +
-				", nombre=" + nombre + 
-				", apellido=" + apellido +
-				", usuario=" + usuario +
-				", email=" + email + 
-				", foto=" + foto +
-				", celular=" + celular +
-				", ciclo=" + ciclo + "]";
-	}
+    public Carrera getCarrera() {
+        return carrera;
+    }
 
-    
+    public void setCarrera(Carrera carrera) {
+        this.carrera = carrera;
+    }
+
+    @Override
+    public String toString() {
+        return "Participante{" +
+                "idParticipante=" + idParticipante +
+                ", nombre='" + nombre + '\'' +
+                ", apellido='" + apellido + '\'' +
+                ", usuario='" + usuario + '\'' +
+                ", email='" + email + '\'' +
+                ", foto='" + foto + '\'' +
+                ", celular='" + celular + '\'' +
+                ", ciclo='" + ciclo + '\'' +
+                ", carrera=" + carrera +
+                '}';
+    }
 }
