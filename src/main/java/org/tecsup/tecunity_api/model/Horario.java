@@ -2,6 +2,7 @@ package org.tecsup.tecunity_api.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.sql.Time;
 import java.util.Date;
 
 @Entity
@@ -14,10 +15,10 @@ public class Horario implements Serializable {
     private Integer idHorario;
 
     @Column(name = "hora_inicio")
-    private Date horaInicio;
+    private Time horaInicio;
 
     @Column(name = "hora_fin")
-    private Date horaFin;
+    private Time horaFin;
 
     public Integer getIdHorario() {
         return idHorario;
@@ -27,19 +28,19 @@ public class Horario implements Serializable {
         this.idHorario = idHorario;
     }
 
-    public Date getHoraInicio() {
+    public Time getHoraInicio() {
         return horaInicio;
     }
 
-    public void setHoraInicio(Date horaInicio) {
+    public void setHoraInicio(Time horaInicio) {
         this.horaInicio = horaInicio;
     }
 
-    public Date getHoraFin() {
+    public Time getHoraFin() {
         return horaFin;
     }
 
-    public void setHoraFin(Date horaFin) {
+    public void setHoraFin(Time horaFin) {
         this.horaFin = horaFin;
     }
 

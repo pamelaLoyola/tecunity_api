@@ -1,7 +1,7 @@
 
 
-INSERT INTO horario (id_horario, hora_inicio, hora_fin) VALUES (1, '2007-12-15 23:50:26', '2007-12-15 23:50:26');
-INSERT INTO horario (id_horario, hora_inicio, hora_fin) VALUES (2, '2007-12-15 23:50:26', '2007-12-15 23:50:26');
+INSERT INTO `horario` (`id_horario`, `hora_fin`, `hora_inicio`) VALUES (NULL, '08:00:00', '10:00:00');
+INSERT INTO `horario` (`id_horario`, `hora_fin`, `hora_inicio`) VALUES (NULL, '09:00:00', '11:00:00');
 
 INSERT INTO curso (curso_id, curso_nombre) VALUES (1, 'Desarrollo de Aplicaciones Empresariales');
 INSERT INTO curso (curso_id, curso_nombre) VALUES (2, 'Programación en móviles');
