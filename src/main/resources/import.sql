@@ -1,3 +1,4 @@
+
 INSERT INTO horario (id_horario, hora_inicio, hora_fin) VALUES (1, '2007-12-15 23:50:26', '2007-12-15 23:50:26');
 INSERT INTO horario (id_horario, hora_inicio, hora_fin) VALUES (2, '2007-12-15 23:50:26', '2007-12-15 23:50:26');
 
