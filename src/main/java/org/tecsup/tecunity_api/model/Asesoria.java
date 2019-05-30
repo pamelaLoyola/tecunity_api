@@ -41,38 +41,6 @@ public class Asesoria implements Serializable {
     @JoinColumn(name = "horario_id_horario")
     private Horario horario;
 
-    /*
-    @ManyToMany
-	@JoinTable(name="usuario_roles"
-		,joinColumns=@JoinColumn(name="usuario_id")
-		,inverseJoinColumns=@JoinColumn(name="role_id")
-	)
-private Set<Rol> roles;
-    * */
-
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "asesoria_participante"
-            , joinColumns = @JoinColumn(name = "id_asesoria", referencedColumnName = "id_asesoria")
-            , inverseJoinColumns = @JoinColumn(name = "par_id", referencedColumnName = "par_id")
-    )
-    //@JsonIgnore
-    private List<Participante> participantes = new ArrayList<>();
-
-    public Asesoria(String tituloAsesoria, String descripcionAsesoria, String etiquetaAsesoria, String estadoAsesoria,
-                    String tipoAsesoria, Curso curso, Horario horario, List<Participante> participantes) {
-        this.tituloAsesoria = tituloAsesoria;
-        this.descripcionAsesoria = descripcionAsesoria;
-        this.etiquetaAsesoria = etiquetaAsesoria;
-        this.estadoAsesoria = estadoAsesoria;
-        this.tipoAsesoria = tipoAsesoria;
-        this.curso = curso;
-        this.horario = horario;
-        this.participantes = participantes;
-    }
-
-    public Asesoria() {
-    }
-
     public Integer getIdAsesoria() {
         return idAsesoria;
     }
@@ -137,14 +105,6 @@ private Set<Rol> roles;
         this.horario = horario;
     }
 
-    public List<Participante> getParticipantes() {
-        return participantes;
-    }
-
-    public void setParticipantes(List<Participante> participantes) {
-        this.participantes = participantes;
-    }
-
     @Override
     public String toString() {
         return "Asesoria{" +
@@ -156,7 +116,6 @@ private Set<Rol> roles;
                 ", tipoAsesoria='" + tipoAsesoria + '\'' +
                 ", curso=" + curso +
                 ", horario=" + horario +
-                ", participantes=" + participantes +
                 '}';
     }
 }

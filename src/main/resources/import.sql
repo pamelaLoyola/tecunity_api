@@ -15,6 +15,6 @@ INSERT INTO participante (par_id, par_nombre, par_apellido, par_usuario, par_ema
 INSERT INTO asesoria (id_asesoria, ase_titulo, ase_descripcion, ase_etiqueta, ase_estado, ase_tipo, curso_curso_id, horario_id_horario) VALUES (1, 'Clase de química', 'Clase de nomenclaturas', 'quimica', 'en curso', '1', 1, 1);
 INSERT INTO asesoria (id_asesoria, ase_titulo, ase_descripcion, ase_etiqueta, ase_estado, ase_tipo, curso_curso_id, horario_id_horario) VALUES (2, 'Clase de React', 'Consumir un API Rest con React', 'react, javascript, django', 'en curso', '1', 2, 2);
 
-INSERT INTO asesoria_participante(id_asesoria, par_id) VALUES (1,1);
-INSERT INTO asesoria_participante(id_asesoria, par_id) VALUES (1,2);
-INSERT INTO asesoria_participante(id_asesoria, par_id) VALUES (2,1);
+--INSERT INTO asesoria_participante(id_asesoria, par_id) VALUES (1,1);
+--INSERT INTO asesoria_participante(id_asesoria, par_id) VALUES (1,2);
+--INSERT INTO asesoria_participante(id_asesoria, par_id) VALUES (2,1);

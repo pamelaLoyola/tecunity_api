@@ -41,33 +41,6 @@ public class Participante implements Serializable {
     @JoinColumn(name = "carrera_carrera_id")
     private Carrera carrera;
 
-    /*
-    @ManyToMany(mappedBy = "authors")
-    private List&lt;Book> books;
-
-
-
-    @ManyToMany(mappedBy = "participantes")
-    @JsonIgnore
-    private Set<Asesoria> asesorias;
-
-     */
-
-    public Participante(String nombre, String apellido, String usuario, String email, String foto, String celular,
-                        String ciclo, Carrera carrera) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.usuario = usuario;
-        this.email = email;
-        this.foto = foto;
-        this.celular = celular;
-        this.ciclo = ciclo;
-        this.carrera = carrera;
-    }
-
-    public Participante() {
-    }
-
     public Integer getIdParticipante() {
         return idParticipante;
     }

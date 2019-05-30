@@ -6,5 +6,5 @@ import org.tecsup.tecunity_api.model.Horario;
 
 @Repository(value = "horarioRepository")
 public interface HorarioRepository extends JpaRepository<Horario, Integer> {
-    
+
 }
